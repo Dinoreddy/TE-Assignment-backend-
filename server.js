@@ -1,7 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
-import { MongoDB } from "./lib/dbConnnection.js";
+import "./lib/firebaseAdmin.js"; // Just runs the setup
 import projectRouter from "./routes/projectRouter.js";
 
 const app = express();
@@ -19,5 +19,4 @@ app.use("/api/projects", projectRouter);
 
 const port = process.env.PORT || 5000;
 app.listen(port, () =>{ console.log(`Server started on port ${port}`)
-        MongoDB();
 });
